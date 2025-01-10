@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct _D_Model_Level_SelectorApp: App {
+struct Three_D_Model_Level_SelectorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

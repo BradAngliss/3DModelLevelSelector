@@ -10,17 +10,8 @@ import SceneKit
 
 struct ContentView: View {
     @StateObject var viewModel = ViewModel()
-    @State var animateLeft = false
     @State var screenSize: CGSize = .zero
-    
-    struct AnimationValues {
-        var scale = 1.0
-        var rotation = 0.0
-        var rotation3d = 0.0
-        var blur = 0.0
-        var offset = 0.0
-    }
-    
+
     var body: some View {
         ScrollViewReader { reader in
             Group {
