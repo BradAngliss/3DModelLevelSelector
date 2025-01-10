@@ -10,10 +10,10 @@ import SwiftUI
 import SceneKit
 
 enum Nodes: String {
-    case ftm = "tree_ref2"
+    case ftm = "tree_ref"
     case tree = "fantasy_ref"
-    case house = "house_ref2"
-    case house2 = "chinese_ref"
+    case house = "house_ref"
+    case house2 = "chinese_buliding_ref"
 }
 
 extension ContentView {
