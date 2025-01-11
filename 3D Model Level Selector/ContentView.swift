@@ -21,7 +21,7 @@ struct ContentView: View {
                         options: [.autoenablesDefaultLighting]
                     )
                     .edgesIgnoringSafeArea(.all)
-                    
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 220) {
                             Spacer()
@@ -71,11 +71,15 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 Text(viewModel.levelTitle)
                     .font(.title)
+
                 Divider()
+
                 HStack(spacing: 30) {
                     Text(viewModel.levelDescription)
                         .font(.subheadline)
+
                     Spacer()
+
                     Button {
                     } label: {
                         Image(systemName: "play.fill")

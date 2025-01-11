@@ -84,17 +84,6 @@ extension ContentView {
 
             genericSwipeGesture(currentNode: currentNode)
         }
-        
-        private func genericSwipeGesture(currentNode: SCNNode) {
-            let angle = angleBetween(nodeOne: currentNode, nodeTwo: nodeObjects[selectedIndex])
-            
-            mainScene.rootNode.childNode(withName: "pivot", recursively: true)!.runAction(.rotate(by: angle, around: .init(x: 0, y: 1, z: 0), duration: 0.3))
-            
-            camera.look(at: nodeObjects[selectedIndex].position)
-            
-            levelTitle = selectedNode.title
-            levelDescription = selectedNode.description
-        }
 
         func angleBetween(nodeOne: SCNNode, nodeTwo: SCNNode) -> CGFloat {
             let previousAngle = atan2f(Float(nodeOne.position.z - pivot.position.z),
@@ -106,6 +95,17 @@ extension ContentView {
             //Adjust the rotation by the change in angle.
             return CGFloat(currentAngle - previousAngle)
             
+        }
+
+        private func genericSwipeGesture(currentNode: SCNNode) {
+            let angle = angleBetween(nodeOne: currentNode, nodeTwo: nodeObjects[selectedIndex])
+            
+            mainScene.rootNode.childNode(withName: "pivot", recursively: true)!.runAction(.rotate(by: angle, around: .init(x: 0, y: 1, z: 0), duration: 0.3))
+            
+            camera.look(at: nodeObjects[selectedIndex].position)
+            
+            levelTitle = selectedNode.title
+            levelDescription = selectedNode.description
         }
     }
 
